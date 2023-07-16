@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@auth0/auth0-react': ^2.2.0
   '@types/node': 20.4.1
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
@@ -17,6 +18,7 @@ specifiers:
   typescript: 5.1.6
 
 dependencies:
+  '@auth0/auth0-react': 2.2.0_biqbaboplfbrettd7655fr4n2y
   '@types/node': 20.4.1
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
@@ -43,6 +45,21 @@ packages:
   /@alloc/quick-lru/5.2.0:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
+    dev: false
+
+  /@auth0/auth0-react/2.2.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Kqk73HamFDDit9rGlmqUMbZiSuYcAJ0+P3ZS3kek79fsrUTc2od9tTVOjkNbzMLifetevOJ3Mgt/6f/6To4vkg==}
+    peerDependencies:
+      react: ^16.11.0 || ^17 || ^18
+      react-dom: ^16.11.0 || ^17 || ^18
+    dependencies:
+      '@auth0/auth0-spa-js': 2.1.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@auth0/auth0-spa-js/2.1.0:
+    resolution: {integrity: sha512-7cF2NxrslgjArIdBwpNg02atPldpHHOrXxDScL71cbxKuKny3eziZIpNHQAdsPFiLhjKQ+izWmLq2ZRFlYB/eQ==}
     dev: false
 
   /@babel/runtime/7.22.6:
