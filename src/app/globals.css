@@ -2,26 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-gradient-to-br from-orange-100 to-pink-100 text-gray-900;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .mandala-cell {
+    @apply border border-gray-400 bg-white hover:bg-gray-50 transition-all duration-300;
+  }
+  
+  .mandala-cell.center-main {
+    @apply bg-blue-50 font-bold shadow-lg;
+  }
+  
+  .mandala-cell.center-goal {
+    @apply bg-blue-100 font-semibold shadow-md;
+  }
+  
+  .mandala-cell.outer-center {
+    @apply bg-green-50 font-bold shadow-md animate-bounce-in;
+  }
+  
+  .mandala-cell.outer-sub {
+    @apply bg-white shadow-sm animate-fade-in;
+  }
+  
+  .mandala-cell input {
+    @apply w-full h-full bg-transparent text-center text-sm resize-none border-none outline-none;
+  }
+  
+  .mandala-cell textarea {
+    @apply w-full h-full bg-transparent text-center text-xs resize-none border-none outline-none;
+  }
 }
+
+@layer utilities {
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.6s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+} 
